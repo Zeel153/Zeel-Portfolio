@@ -44,9 +44,8 @@ main{padding-top:52px;}
 .slide{background:var(--paper);padding:4rem 0;opacity:0;transform:translateY(28px);transition:opacity 0.9s ease,transform 0.9s ease;border-bottom:4px double var(--rule);}
 .slide.visible{opacity:1;transform:translateY(0);}
 .container{max-width:960px;margin:0 auto;padding:0 2rem;}
-.hr-thick{border:none;border-top:4px solid var(--ink);margin:0.4rem 0;}
-.hr-thin{border:none;border-top:1px solid var(--rule);margin:0.4rem 0;}
-.hr-double{border:none;border-top:4px double var(--ink);margin:0.4rem 0;}
+
+/* SECTION HEADER */
 .sec-kicker{font-family:var(--mono);font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--rust);margin-bottom:0.4rem;}
 .sec-title{font-family:var(--display);font-weight:900;font-size:clamp(2rem,5vw,3.2rem);line-height:1;color:var(--ink);}
 .sec-rule{width:56px;height:2px;background:var(--rust);margin:0.75rem auto 0;}
@@ -59,163 +58,39 @@ main{padding-top:52px;}
 .mast-tag{text-align:center;font-family:var(--body);font-style:italic;font-size:1.05rem;color:var(--faded);margin-bottom:0.5rem;}
 .hero-cols{display:grid;grid-template-columns:1fr 2px 2fr 2px 1fr;gap:1.5rem;margin-top:2rem;align-items:start;}
 .col-div{background:var(--rule);}
-.hcol .kicker{font-family:var(--mono);font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--rust);margin-bottom:0.3rem;}
 .hcol h2{font-family:var(--display);font-weight:700;font-size:1.3rem;line-height:1.2;border-bottom:1px solid var(--rule);padding-bottom:0.4rem;margin-bottom:0.65rem;}
 .hcol p{font-size:0.88rem;line-height:1.8;color:var(--ink2);}
-.hcol-center h1{font-family:var(--display);font-weight:900;font-style:italic;font-size:clamp(2rem,5.5vw,3.4rem);line-height:1.05;margin-bottom:0.65rem;}
-.deck{font-family:var(--body);font-style:italic;font-size:1rem;color:var(--faded);line-height:1.65;border-left:3px solid var(--rust);padding-left:1rem;margin:0.85rem 0;}
-.byline{font-family:var(--mono);font-size:10px;color:var(--faded);letter-spacing:0.1em;text-transform:uppercase;margin-top:0.75rem;}
 
-/* HERO BANNER */
-.hero-banner{width:100%;height:240px;overflow:hidden;position:relative;margin-top:2rem;}
-.hero-banner img{width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:sepia(70%) contrast(0.85) brightness(0.65);}
-.hero-banner-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(245,240,232,0) 0%,rgba(245,240,232,0.98) 100%);}
-.hero-banner-hint{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:10px;color:var(--faded);letter-spacing:0.2em;text-transform:uppercase;animation:nudge 2s infinite;white-space:nowrap;}
-@keyframes nudge{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(5px)}}
+/* HERO BANNER IMAGE */
+.hero-banner{width:100%;height:220px;overflow:hidden;position:relative;margin-top:2rem;}
+.hero-banner img{width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:sepia(60%) contrast(0.9) brightness(0.75);}
+.hero-banner-overlay{position:absolute;inset:0;background:linear-gradient(to bottom, rgba(245,240,232,0.1) 0%, rgba(245,240,232,0.95) 100%);}
+.hero-banner-caption{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:9px;color:var(--faded);letter-spacing:0.2em;text-transform:uppercase;white-space:nowrap;}
 
-/* ══ ABOUT ══ */
-#slide-about{background:var(--paper2);}
-.about-grid{display:grid;grid-template-columns:280px 1fr;gap:3rem;align-items:start;}
-.about-image-stack{display:flex;flex-direction:column;gap:1rem;}
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1.8fr;gap:3rem;align-items:start;}
+.img-frame{border:2px solid var(--rule);padding:0.4rem;background:var(--paper);box-shadow:4px 4px 0 var(--sepia2);overflow:hidden; margin-bottom: 1rem;}
+.img-frame img{width:100%;display:block;filter:sepia(50%) contrast(0.95) brightness(0.9);}
 
-/* IMAGE FRAME — used everywhere */
-.img-frame{border:2px solid var(--rule);padding:5px;background:var(--paper);box-shadow:4px 4px 0 var(--sepia2);overflow:hidden;}
-.img-frame img{width:100%;display:block;filter:sepia(45%) contrast(0.92) brightness(0.88);transition:filter 0.5s;}
-.img-frame:hover img{filter:sepia(10%) contrast(1) brightness(1);}
-.img-cap{font-family:var(--mono);font-size:8px;color:var(--faded);letter-spacing:0.15em;text-transform:uppercase;text-align:center;padding:4px 0 2px;}
+/* SKILLS */
+.skills-layout{display:grid;grid-template-columns:1fr 1fr;gap:3rem;}
+.skill-cell{padding:1.1rem 1.4rem;border-bottom:1px solid var(--rule);}
 
-/* PHOTO PLACEHOLDER (for when no real photo yet) */
-.photo-placeholder{aspect-ratio:3/4;background:var(--paper2);display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid var(--rule);gap:0.5rem;position:relative;overflow:hidden;}
-.photo-placeholder::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 4px,rgba(180,160,120,0.07) 4px,rgba(180,160,120,0.07) 5px);}
-.photo-init{font-family:var(--display);font-weight:900;font-size:5rem;color:var(--sepia2);line-height:1;position:relative;z-index:1;}
-.photo-hint{font-family:var(--mono);font-size:8px;color:var(--faded);letter-spacing:0.15em;text-transform:uppercase;position:relative;z-index:1;text-align:center;padding:0 0.5rem;}
-
-.about-text h2{font-family:var(--display);font-weight:900;font-size:2rem;line-height:1.1;margin-bottom:1rem;}
-.about-text p{font-size:0.92rem;line-height:1.85;color:var(--ink2);margin-bottom:0.9rem;}
-.pull-quote{font-family:var(--display);font-style:italic;font-size:1.15rem;line-height:1.4;color:var(--ink);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:0.9rem 0;margin:1.25rem 0;text-align:center;}
-.mission-pill{display:inline-block;font-family:var(--mono);font-size:9px;letter-spacing:0.2em;text-transform:uppercase;border:1px solid var(--rust);color:var(--rust);padding:4px 12px;margin-bottom:1rem;}
-
-/* ══ SKILLS ══ */
-#slide-skills{background:var(--paper);}
-.skills-layout{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
-.skills-grid{border:1px solid var(--rule);}
-.skill-cell{padding:1.1rem 1.4rem;border-bottom:1px solid var(--rule);transition:background 0.2s;}
-.skill-cell:last-child{border-bottom:none;}
-.skill-cell:hover{background:var(--paper2);}
-.skill-label{font-family:var(--mono);font-size:9px;color:var(--rust);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.2rem;}
-.skill-name{font-family:var(--display);font-weight:700;font-size:1rem;margin-bottom:0.3rem;}
-.skill-sub{font-family:var(--mono);font-size:9px;color:var(--faded);margin-bottom:0.4rem;line-height:1.5;}
-.skill-track{height:2px;background:var(--rule);}
-.skill-fill{height:2px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform 1.2s ease 0.2s;}
-.visible .skill-fill{transform:scaleX(1);}
-.skills-side{display:flex;flex-direction:column;gap:1.25rem;}
-.dark-card{background:var(--ink);color:var(--paper);padding:1.5rem;font-family:var(--display);font-style:italic;font-size:1.1rem;line-height:1.55;}
-.dark-card span{color:var(--sepia);}
-.skills-side .img-frame img{height:185px;object-fit:cover;}
-
-/* ══ PROJECTS ══ */
-#slide-projects{background:var(--paper2);}
+/* PROJECTS */
 .broadsheet{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:3px double var(--ink);}
-.proj-card{padding:1.75rem;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);position:relative;transition:background 0.2s;}
-.proj-card:hover{background:var(--paper);}
-.proj-num{position:absolute;top:1rem;right:1.25rem;font-family:var(--display);font-style:italic;font-size:2.2rem;color:var(--rule);line-height:1;}
-.proj-issue{font-family:var(--mono);font-size:9px;color:var(--rust);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.4rem;}
-.proj-img{width:100%;height:140px;object-fit:cover;display:block;filter:sepia(50%) contrast(0.88) brightness(0.8);margin-bottom:0.75rem;border:1px solid var(--rule);transition:filter 0.4s;}
-.proj-card:hover .proj-img{filter:sepia(15%) contrast(1) brightness(0.95);}
-.proj-headline{font-family:var(--display);font-weight:900;font-size:1.25rem;line-height:1.15;margin-bottom:0.4rem;}
-.proj-sub{font-family:var(--body);font-style:italic;font-size:0.88rem;color:var(--faded);margin-bottom:0.65rem;}
-.proj-body{font-size:0.84rem;line-height:1.8;color:var(--ink2);}
-.proj-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:0.9rem;}
-.tag{font-family:var(--mono);font-size:9px;padding:2px 8px;border:1px solid var(--rule);color:var(--faded);letter-spacing:0.05em;text-transform:uppercase;}
+.proj-card{padding:1.75rem;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+.proj-img{width:100%;height:150px;object-fit:cover;border:1px solid var(--rule);margin-bottom: 1rem;filter: sepia(40%);}
 
-/* FULL-BLEED BREAK */
-.img-break{width:100%;height:300px;position:relative;overflow:hidden;border-top:4px double var(--rule);border-bottom:4px double var(--rule);}
-.img-break img{width:100%;height:100%;object-fit:cover;object-position:center;filter:sepia(60%) contrast(0.85) brightness(0.6);}
-.img-break-overlay{position:absolute;inset:0;background:rgba(26,21,16,0.55);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.75rem;}
-.img-break-quote{font-family:var(--display);font-style:italic;font-weight:700;font-size:clamp(1.3rem,3vw,2rem);color:var(--paper);text-align:center;max-width:620px;padding:0 2rem;line-height:1.35;}
-.img-break-attr{font-family:var(--mono);font-size:10px;color:var(--sepia);letter-spacing:0.2em;text-transform:uppercase;}
+/* TELEGRAPH */
+.tgraph{border:2px solid var(--sepia2);background:#0f0d09;padding: 1rem; color: var(--sepia);}
+.tgraph-msgs{height:200px;overflow-y:auto;border:1px solid var(--sepia2);margin-bottom:1rem;padding:0.5rem;}
 
-/* ══ EXPERIENCE ══ */
-#slide-exp{background:var(--paper);}
-.exp-cols{display:grid;grid-template-columns:1fr 2px 1fr;gap:2.5rem;}
-.tl-item{margin-bottom:1.9rem;padding-bottom:1.9rem;border-bottom:1px solid var(--rule);}
-.tl-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
-.tl-date{font-family:var(--mono);font-size:9px;color:var(--rust);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.2rem;}
-.tl-role{font-family:var(--display);font-weight:700;font-size:1.1rem;line-height:1.2;margin-bottom:0.15rem;}
-.tl-org{font-family:var(--body);font-style:italic;font-size:0.88rem;color:var(--faded);margin-bottom:0.45rem;}
-.tl-body{font-size:0.84rem;line-height:1.8;color:var(--ink2);}
-
-/* ══ PHILOSOPHY ══ */
-#slide-philosophy{background:var(--ink);}
-#slide-philosophy .sec-kicker{color:var(--sepia);}
-#slide-philosophy .sec-title{color:var(--paper);}
-#slide-philosophy .sec-rule{background:var(--sepia);}
-.phil-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid #3a3020;}
-.phil-card{padding:2rem 1.75rem;border-right:1px solid #3a3020;border-bottom:1px solid #3a3020;transition:background 0.2s;}
-.phil-card:hover{background:#1a1510;}
-.phil-num{font-family:var(--display);font-style:italic;font-size:3rem;color:#3a3020;line-height:1;margin-bottom:0.5rem;}
-.phil-title{font-family:var(--display);font-weight:700;font-size:1.1rem;color:var(--sepia);margin-bottom:0.6rem;}
-.phil-body{font-family:var(--body);font-size:0.85rem;line-height:1.8;color:#7a6e5a;}
-
-/* ══ AI TELEGRAPH ══ */
-#slide-ai{background:var(--ink);border-bottom:none;}
-#slide-ai .sec-kicker{color:var(--sepia);}
-#slide-ai .sec-title{color:var(--paper);}
-#slide-ai .sec-rule{background:var(--sepia);}
-.tgraph-wrap{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;}
-.tgraph-img-col{display:flex;flex-direction:column;gap:1.1rem;}
-.tgraph-img-col .img-frame img{height:175px;object-fit:cover;filter:sepia(70%) contrast(0.82) brightness(0.6);}
-.tgraph-img-col .img-frame:hover img{filter:sepia(20%) contrast(1) brightness(0.85);}
-.tgraph-caption{font-family:var(--body);font-style:italic;font-size:0.88rem;color:#7a6e5a;line-height:1.7;padding:0.25rem 0;}
-.tgraph{border:2px solid var(--sepia2);background:#0f0d09;box-shadow:0 0 50px rgba(196,168,130,0.08);}
-.tgraph-hdr{background:#1a1510;padding:0.7rem 1.5rem;border-bottom:2px solid var(--sepia2);display:flex;align-items:center;justify-content:space-between;}
-.tgraph-title{font-family:var(--display);font-weight:900;font-size:0.85rem;color:var(--sepia);letter-spacing:0.1em;text-transform:uppercase;}
-.tgraph-status{font-family:var(--mono);font-size:9px;color:#6a9a5a;letter-spacing:0.15em;text-transform:uppercase;}
-.tgraph-msgs{height:260px;overflow-y:auto;padding:1.1rem 1.25rem;display:flex;flex-direction:column;gap:1rem;scrollbar-width:thin;scrollbar-color:var(--sepia2) transparent;}
-.tgraph-msgs::-webkit-scrollbar{width:4px;}
-.tgraph-msgs::-webkit-scrollbar-thumb{background:var(--sepia2);}
-.tmsg{max-width:90%;}
-.tmsg-user{align-self:flex-end;}
-.tmsg-ai{align-self:flex-start;}
-.tmsg-label{font-family:var(--mono);font-size:9px;letter-spacing:0.13em;text-transform:uppercase;color:#5a5040;margin-bottom:4px;}
-.tmsg-user .tmsg-label{text-align:right;}
-.tmsg-bubble{padding:0.65rem 0.9rem;font-family:var(--mono);font-size:11px;line-height:1.75;}
-.tmsg-user .tmsg-bubble{background:#2a2010;border:1px solid var(--sepia2);color:var(--sepia);}
-.tmsg-ai .tmsg-bubble{background:transparent;border:1px solid #3a3020;color:#c8b890;}
-.typing{display:none;align-self:flex-start;font-family:var(--mono);font-size:11px;color:var(--sepia2);letter-spacing:0.1em;padding:0.4rem 1.25rem;}
-.typing.on{display:block;}
-.typing::after{content:'...';animation:dots 1.2s steps(4,end) infinite;}
-@keyframes dots{0%,20%{content:'.'}40%,60%{content:'..'}80%,100%{content:'...'}}
-.quick-row{display:flex;flex-wrap:wrap;gap:0.4rem;padding:0.6rem 1.25rem;border-top:1px solid #2a2010;}
-.qbtn{font-family:var(--mono);font-size:9px;padding:3px 10px;border:1px solid #3a3020;background:transparent;color:var(--sepia2);cursor:pointer;letter-spacing:0.08em;text-transform:uppercase;transition:border-color 0.2s,color 0.2s;}
-.qbtn:hover{border-color:var(--sepia);color:var(--sepia);}
-.tgraph-foot{border-top:2px solid var(--sepia2);padding:0.65rem 0.9rem;display:flex;gap:0.5rem;background:#0f0d09;}
-.tgraph-input{flex:1;background:transparent;border:1px solid #3a3020;color:var(--sepia);font-family:var(--mono);font-size:11px;padding:0.55rem 0.7rem;outline:none;transition:border-color 0.2s;}
-.tgraph-input:focus{border-color:var(--sepia2);}
-.tgraph-input::placeholder{color:#3a3020;}
-.tgraph-send{background:#2a2010;border:1px solid var(--sepia2);color:var(--sepia);font-family:var(--mono);font-size:10px;padding:0.55rem 1rem;cursor:pointer;letter-spacing:0.1em;text-transform:uppercase;transition:background 0.2s;white-space:nowrap;}
-.tgraph-send:hover{background:#3a3020;}
-.tgraph-send:disabled{opacity:0.35;cursor:not-allowed;}
-.ai-note{font-family:var(--body);font-style:italic;font-size:0.82rem;color:#5a5040;margin-top:0.75rem;text-align:center;}
-
-/* ══ CONTACT ══ */
-#slide-contact{background:var(--ink);border-bottom:none;}
-.contact-mast{text-align:center;padding:3rem 0;border-top:4px double var(--sepia2);border-bottom:4px double var(--sepia2);margin-bottom:2.5rem;}
-.contact-big{font-family:var(--display);font-weight:900;font-size:clamp(3rem,8vw,6rem);color:var(--paper);line-height:0.95;letter-spacing:-2px;}
-.contact-big em{font-style:italic;color:var(--sepia);}
-.contact-sub{font-family:var(--body);font-style:italic;font-size:1.05rem;color:var(--sepia2);margin-top:1rem;max-width:500px;margin-left:auto;margin-right:auto;}
-.contact-links{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem;}
-.clink{display:block;padding:0.7rem 1.8rem;border:1px solid var(--sepia2);color:var(--sepia);text-decoration:none;font-family:var(--mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;transition:background 0.2s,color 0.2s;}
-.clink:hover{background:var(--sepia2);color:var(--ink);}
-
-footer{background:#0d0b08;padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:10px;color:#5a5040;letter-spacing:0.1em;border-top:1px solid #2a2010;}
+/* CONTACT */
+#slide-contact{background:var(--ink); color: var(--paper); padding: 4rem 0; text-align: center;}
+.clink{display:inline-block; margin: 10px; color: var(--sepia); text-decoration: none; border: 1px solid var(--sepia); padding: 5px 15px;}
 
 @media(max-width:700px){
-  .hero-cols,.about-grid,.exp-cols,.broadsheet,.phil-grid,.tgraph-wrap,.skills-layout{grid-template-columns:1fr;}
-  .col-div,.exp-cols>div:nth-child(2){display:none;}
-  nav .nav-links{display:none;}
-  .mast-name{font-size:2.8rem;}
-  .tgraph-img-col{display:none;}
+  .hero-cols,.about-grid,.broadsheet,.skills-layout{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -229,511 +104,97 @@ footer{background:#0d0b08;padding:1.5rem 2rem;display:flex;justify-content:space
     <li><a href="#slide-about">About</a></li>
     <li><a href="#slide-skills">Skills</a></li>
     <li><a href="#slide-projects">Projects</a></li>
-    <li><a href="#slide-exp">Experience</a></li>
-    <li><a href="#slide-philosophy">Philosophy</a></li>
-    <li><a href="#slide-ai">Telegraph</a></li>
     <li><a href="#slide-contact">Contact</a></li>
   </ul>
 </nav>
 
 <main>
 
-<!-- ══════════ HERO ══════════ -->
 <section class="slide" id="slide-hero">
   <div class="container">
-    <div class="mast-top">
-      <span>Est. 2024 · Information Technology</span>
-      <span>AI-Forward Engineering · Vol. I, No. 1</span>
-      <span>Open to Opportunities</span>
-    </div>
-    <hr class="hr-thick"/>
     <div class="mast-name">ZEEL PATEL</div>
-    <hr class="hr-thin"/>
     <p class="mast-tag"><em>"Building at the intersection of intelligent systems and real-world impact."</em></p>
-    <hr class="hr-double"/>
-
     <div class="hero-cols">
       <div class="hcol">
-        <p class="kicker">The Mission</p>
         <h2>IT Student with an AI-Forward Vision</h2>
-        <p>Zeel Patel is not waiting to graduate before thinking seriously about AI engineering. The work begins now — one project, one concept, one deployment at a time.</p>
-      </div>
-      <div class="col-div"></div>
-      <div class="hcol hcol-center">
-        <h1>From IT Foundations<br><em>To Intelligent Systems</em></h1>
-        <p class="deck">"Anyone can call themselves AI-forward. I want to mean it — to understand how these systems work, where they break, and how to build ones that don't."</p>
-        <p class="byline">By Zeel Patel · IT Student · <em>Aspiring AI-Forward Engineer</em></p>
+        <p>The work begins now — one project, one concept, one deployment at a time.</p>
       </div>
       <div class="col-div"></div>
       <div class="hcol">
-        <p class="kicker">Current Focus</p>
-        <h2>Bridging Infrastructure and Machine Intelligence</h2>
-        <p>Where most IT students stop at networks and systems, Zeel keeps going — into automation, APIs, and the AI layer rapidly becoming the most important layer of all.</p>
+        <h2>Bridging Infrastructure</h2>
+        <p>Focusing on automation, APIs, and the AI layer of modern IT.</p>
       </div>
     </div>
   </div>
-
-  <!-- HERO BANNER — vintage tech lab photo -->
   <div class="hero-banner">
-    <img
-      src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=80&auto=format&fit=crop"
-      alt="Circuit board closeup — vintage tech aesthetic"/>
-    <div class="hero-banner-overlay"></div>
-    <div class="hero-banner-hint">▼ scroll to read on ▼</div>
+    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400" alt="Vintage Circuitry"/>
   </div>
 </section>
 
-<!-- ══════════ ABOUT ══════════ -->
 <section class="slide" id="slide-about">
   <div class="container">
     <div class="sec-header">
-      <p class="sec-kicker">Chapter I</p>
       <h2 class="sec-title">The Engineer in Formation</h2>
-      <div class="sec-rule"></div>
     </div>
     <div class="about-grid">
       <div class="about-image-stack">
-
-        <!-- YOUR PHOTO: replace the div below with an <img> tag when you have one -->
         <div class="img-frame">
-          <div class="photo-placeholder">
-            <div class="photo-init">ZP</div>
-            <p class="photo-hint">Add your photo here<br/>save it as photo.jpg<br/>in the same folder</p>
-          </div>
-          <p class="img-cap">Zeel Patel · IT Student</p>
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600" alt="Portrait"/>
         </div>
-
-        <!-- Atmospheric second image -->
-        <div class="img-frame">
-          <img
-            src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&q=80&auto=format&fit=crop"
-            alt="Library books — the pursuit of knowledge"/>
-          <p class="img-cap">The pursuit of knowledge</p>
-        </div>
-
       </div>
       <div class="about-text">
-        <div class="mission-pill">AI-Forward Engineer</div>
-        <h2>IT Is the Foundation. AI Is the Direction.</h2>
-        <p>Zeel Patel came into Information Technology with a practical goal: understand how systems are built, how they communicate, and how they fail. But somewhere between networking fundamentals and database design, a bigger question emerged — what happens when those systems start to think?</p>
-        <p>That question is now the north star. Zeel is deliberately building an IT foundation that points directly toward AI engineering: understanding the infrastructure AI runs on, the APIs that power it, and the software systems that make it useful in production. Not hype. Architecture.</p>
-        <div class="pull-quote">"The best AI engineers will be the ones who understand what's underneath — the systems, the pipelines, the infrastructure that makes intelligence possible."</div>
-        <p>Currently a student, actively learning, building things that demonstrate real understanding. The goal is not to arrive with a perfect resume — it is to arrive having already done the work.</p>
+        <p>Zeel Patel is building an IT foundation that points directly at AI engineering. Not hype. Architecture.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ SKILLS ══════════ -->
 <section class="slide" id="slide-skills">
   <div class="container">
-    <div class="sec-header">
-      <p class="sec-kicker">Chapter II</p>
-      <h2 class="sec-title">The Toolkit</h2>
-      <div class="sec-rule"></div>
-    </div>
+    <h2 class="sec-title">The Toolkit</h2>
     <div class="skills-layout">
-      <div class="skills-grid">
-        <div class="skill-cell">
-          <div class="skill-label">Programming</div>
-          <div class="skill-name">Python</div>
-          <div class="skill-sub">Scripting, automation, API calls, data handling</div>
-          <div class="skill-track"><div class="skill-fill" style="width:82%"></div></div>
-        </div>
-        <div class="skill-cell">
-          <div class="skill-label">Web & Interface</div>
-          <div class="skill-name">HTML · CSS · JavaScript</div>
-          <div class="skill-sub">Frontend foundations, DOM, async fetch</div>
-          <div class="skill-track"><div class="skill-fill" style="width:75%"></div></div>
-        </div>
-        <div class="skill-cell">
-          <div class="skill-label">AI & APIs</div>
-          <div class="skill-name">LLM Integration</div>
-          <div class="skill-sub">Claude API, prompt engineering, RAG basics</div>
-          <div class="skill-track"><div class="skill-fill" style="width:65%"></div></div>
-        </div>
-        <div class="skill-cell">
-          <div class="skill-label">Data</div>
-          <div class="skill-name">SQL · JSON · REST</div>
-          <div class="skill-sub">Relational databases, API design patterns</div>
-          <div class="skill-track"><div class="skill-fill" style="width:70%"></div></div>
-        </div>
-        <div class="skill-cell">
-          <div class="skill-label">Systems & IT</div>
-          <div class="skill-name">Networking Fundamentals</div>
-          <div class="skill-sub">TCP/IP, DNS, HTTP, Linux CLI, system admin</div>
-          <div class="skill-track"><div class="skill-fill" style="width:78%"></div></div>
-        </div>
-        <div class="skill-cell">
-          <div class="skill-label">Cloud & Tools</div>
-          <div class="skill-name">Git · GitHub · Cloud Basics</div>
-          <div class="skill-sub">Version control, CI awareness, AWS/GCP intro</div>
-          <div class="skill-track"><div class="skill-fill" style="width:68%"></div></div>
-        </div>
-        <div class="skill-cell">
-          <div class="skill-label">ML Foundations</div>
-          <div class="skill-name">Machine Learning Concepts</div>
-          <div class="skill-sub">Supervised learning, scikit-learn — actively studying</div>
-          <div class="skill-track"><div class="skill-fill" style="width:50%"></div></div>
-        </div>
-        <div class="skill-cell">
-          <div class="skill-label">Craft</div>
-          <div class="skill-name">Problem Decomposition</div>
-          <div class="skill-sub">Breaking complex problems into solvable, testable parts</div>
-          <div class="skill-track"><div class="skill-fill" style="width:85%"></div></div>
-        </div>
-      </div>
-
-      <div class="skills-side">
-        <!-- Vintage typewriter -->
-        <div class="img-frame">
-          <img
-            src="https://images.unsplash.com/photo-1516357231954-91487b459602?w=600&q=80&auto=format&fit=crop"
-            alt="Vintage typewriter"/>
-          <p class="img-cap">Every tool has a craft</p>
-        </div>
-        <div class="dark-card">
-          "A skilled engineer does not collect tools — they collect <span>understanding</span>. The tool is temporary; the mental model is permanent."
-        </div>
-        <!-- Old map / exploration -->
-        <div class="img-frame">
-          <img
-            src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&q=80&auto=format&fit=crop"
-            alt="Vintage map and compass"/>
-          <p class="img-cap">Charting the territory ahead</p>
-        </div>
-      </div>
+      <div class="skill-cell"><strong>Python</strong>: Automation & APIs</div>
+      <div class="skill-cell"><strong>Web</strong>: HTML, CSS, JavaScript</div>
+      <div class="skill-cell"><strong>AI</strong>: Claude API, RAG basics</div>
+      <div class="skill-cell"><strong>Data</strong>: SQL, JSON, REST</div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ PROJECTS ══════════ -->
 <section class="slide" id="slide-projects">
   <div class="container">
-    <div class="sec-header">
-      <p class="sec-kicker">Chapter III</p>
-      <h2 class="sec-title">The Work</h2>
-      <div class="sec-rule"></div>
-    </div>
+    <h2 class="sec-title">The Work</h2>
     <div class="broadsheet">
-
       <div class="proj-card">
-        <div class="proj-num">I</div>
-        <p class="proj-issue">AI Integration · Web Development</p>
-        <!-- Code / terminal -->
-        <img class="proj-img"
-          src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=700&q=80&auto=format&fit=crop"
-          alt="Code on screen"/>
-        <h3 class="proj-headline">This Portfolio — A Live AI System, Not Just a Page</h3>
-        <p class="proj-sub">ScrollyTelling meets a working Claude API integration</p>
-        <p class="proj-body">Built using spec-driven development — specification written before a single line of code. Features scroll-triggered animation and a live AI assistant that recruiters can actually converse with about Zeel's background.</p>
-        <div class="proj-tags"><span class="tag">HTML/CSS/JS</span><span class="tag">Claude API</span><span class="tag">ScrollyTelling</span></div>
+        <img class="proj-img" src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600" alt="Code"/>
+        <h3>AI Helpdesk Classifier</h3>
+        <p>Triages tickets automatically using Python and LLMs.</p>
       </div>
-
       <div class="proj-card">
-        <div class="proj-num">II</div>
-        <p class="proj-issue">Python · Automation · AI</p>
-        <!-- Server / data center -->
-        <img class="proj-img"
-          src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=700&q=80&auto=format&fit=crop"
-          alt="Server room"/>
-        <h3 class="proj-headline">IT Helpdesk Classifier Triages Tickets Before Humans Do</h3>
-        <p class="proj-sub">Python script that auto-categorises IT support requests via LLM</p>
-        <p class="proj-body">Takes raw helpdesk ticket text, calls an LLM API to classify urgency and category, outputs structured JSON. AI applied to an IT problem Zeel already understands from the inside.</p>
-        <div class="proj-tags"><span class="tag">Python</span><span class="tag">LLM API</span><span class="tag">IT Systems</span><span class="tag">JSON</span></div>
-      </div>
-
-      <div class="proj-card">
-        <div class="proj-num">III</div>
-        <p class="proj-issue">Networking · Python · Flask</p>
-        <!-- Network cables -->
-        <img class="proj-img"
-          src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&q=80&auto=format&fit=crop"
-          alt="Network cables"/>
-        <h3 class="proj-headline">Network Health Dashboard Surfaces Problems Proactively</h3>
-        <p class="proj-sub">Live Python monitoring tool with browser UI for network diagnostics</p>
-        <p class="proj-body">Pings local network nodes, logs latency over time, displays a live status dashboard in the browser. Good engineers instrument their systems — they don't just react when things break.</p>
-        <div class="proj-tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Networking</span><span class="tag">SQLite</span></div>
-      </div>
-
-      <div class="proj-card">
-        <div class="proj-num">IV</div>
-        <p class="proj-issue">AI / RAG · In Progress · 2025</p>
-        <!-- Books / studying -->
-        <img class="proj-img"
-          src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=700&q=80&auto=format&fit=crop"
-          alt="Study desk with notes"/>
-        <h3 class="proj-headline">RAG Study Assistant Ingests Your Notes, Answers Your Questions</h3>
-        <p class="proj-sub">Retrieval-Augmented Generation applied to a real student use case</p>
-        <p class="proj-body">Uploads lecture PDFs, creates embeddings, lets you ask natural-language questions against your own course materials. A real RAG implementation — not a tutorial copy — designed to be used during finals week.</p>
-        <div class="proj-tags"><span class="tag">Python</span><span class="tag">RAG</span><span class="tag">Embeddings</span><span class="tag">In Progress</span></div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- FULL-BLEED CINEMATIC BREAK -->
-<div class="img-break">
-  <img
-    src="https://images.unsplash.com/photo-1432821596592-e2c18b78144f?w=1400&q=80&auto=format&fit=crop"
-    alt="Open road at dawn — the journey ahead"/>
-  <div class="img-break-overlay">
-    <p class="img-break-quote">"The future belongs to those who understand the systems everyone else takes for granted."</p>
-    <p class="img-break-attr">— Zeel Patel · IT Student · AI-Forward Engineer</p>
-  </div>
-</div>
-
-<!-- ══════════ EXPERIENCE ══════════ -->
-<section class="slide" id="slide-exp">
-  <div class="container">
-    <div class="sec-header">
-      <p class="sec-kicker">Chapter IV</p>
-      <h2 class="sec-title">The Record</h2>
-      <div class="sec-rule"></div>
-    </div>
-    <div class="exp-cols">
-      <div>
-        <div class="tl-item">
-          <div class="tl-date">2024 — Present</div>
-          <div class="tl-role">Information Technology B.S.</div>
-          <div class="tl-org">Currently Enrolled · Full-Time Student</div>
-          <div class="tl-body">Core coursework spanning networking, systems administration, database management, and IT infrastructure. Independently extending the curriculum into AI/ML through self-directed study and project work. Treating the degree as a foundation, not a ceiling.</div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-date">2025</div>
-          <div class="tl-role">AI & ML Self-Study Track</div>
-          <div class="tl-org">fast.ai · Coursera · Primary Docs</div>
-          <div class="tl-body">Completed fast.ai Practical Deep Learning for Coders Part 1. Working through Andrew Ng's Machine Learning Specialization. Primary strategy: build something with each new concept to confirm understanding, not just surface familiarity.</div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-date">2025</div>
-          <div class="tl-role">ScrollyTelling Portfolio Project</div>
-          <div class="tl-org">Web Design Coursework · NJIT</div>
-          <div class="tl-body">Applied spec-driven development methodology to produce this portfolio. Writing the specification before the code forces clarity of thinking — a discipline that transfers directly to professional engineering work.</div>
-        </div>
-      </div>
-
-      <div style="background:var(--rule)"></div>
-
-      <div>
-        <div class="tl-item">
-          <div class="tl-date">Target: Summer 2025</div>
-          <div class="tl-role">IT / AI Engineering Intern</div>
-          <div class="tl-org">Actively Seeking · Open to Location</div>
-          <div class="tl-body">Looking for internships where real AI work is happening — LLM integrations, intelligent tooling, or infrastructure supporting ML in production. Willing to start in an IT or support-adjacent role as a foot in the door. Ready to contribute on anything Python or API-related from day one.</div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-date">Ongoing</div>
-          <div class="tl-role">Independent Project Builder</div>
-          <div class="tl-org">GitHub · Public Portfolio</div>
-          <div class="tl-body">Building publicly on GitHub as a discipline. Every project includes a README explaining the problem, approach, and lessons learned. Code is the proof; the README is the argument.</div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-date">Academic Strengths</div>
-          <div class="tl-role">Relevant Coursework</div>
-          <div class="tl-org">IT Curriculum</div>
-          <div class="tl-body">Networking Fundamentals · Database Systems · Systems Administration · Web Technologies · IT Project Management · Programming for IT Professionals.</div>
-        </div>
+        <img class="proj-img" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600" alt="Network"/>
+        <h3>Network Dashboard</h3>
+        <p>Live monitoring tool for system health.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ PHILOSOPHY ══════════ -->
-<section class="slide" id="slide-philosophy">
-  <div class="container">
-    <div class="sec-header">
-      <p class="sec-kicker">Chapter V</p>
-      <h2 class="sec-title">The Engineering Philosophy</h2>
-      <div class="sec-rule"></div>
-    </div>
-    <div class="phil-grid">
-      <div class="phil-card">
-        <div class="phil-num">01</div>
-        <div class="phil-title">Infrastructure First</div>
-        <div class="phil-body">AI does not float above the stack — it runs on it. Servers, APIs, databases, networks. Understanding the substrate is not optional for an engineer who wants to ship AI that works in production and doesn't break quietly at 2am.</div>
-      </div>
-      <div class="phil-card">
-        <div class="phil-num">02</div>
-        <div class="phil-title">Build to Understand</div>
-        <div class="phil-body">Reading about RAG and building a RAG system are entirely different experiences. Every concept in this toolkit has a project attached. If there is no project, it does not count as known. This is a discipline, not a preference.</div>
-      </div>
-      <div class="phil-card">
-        <div class="phil-num">03</div>
-        <div class="phil-title">Solve Real Problems</div>
-        <div class="phil-body">The best demonstration of engineering skill is not a tutorial reproduction — it is a solution to a problem someone actually has. Every project here solves something real, even at small scale. Useful beats impressive.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ AI TELEGRAPH ══════════ -->
-<section class="slide" id="slide-ai">
-  <div class="container">
-    <div class="sec-header">
-      <p class="sec-kicker">Chapter VI — Powered by AI</p>
-      <h2 class="sec-title">The Electric Telegraph</h2>
-      <div class="sec-rule"></div>
-    </div>
-    <div class="tgraph-wrap">
-
-      <!-- LEFT: Images + editorial text -->
-      <div class="tgraph-img-col">
-        <div class="img-frame">
-          <img
-            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80&auto=format&fit=crop"
-            alt="Old telegraph / communication device"/>
-          <p class="img-cap">The original instant message · 1844</p>
-        </div>
-        <p class="tgraph-caption">In 1844, Samuel Morse sent the first telegraph message across 40 miles of wire. Today, you can query an AI trained on the sum of human knowledge in milliseconds. Zeel is building at the frontier of that same continuum.</p>
-        <div class="img-frame">
-          <img
-            src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80&auto=format&fit=crop"
-            alt="Futuristic AI / technology glow"/>
-          <p class="img-cap">The machine that thinks</p>
-        </div>
-      </div>
-
-      <!-- RIGHT: Live AI chat -->
-      <div>
-        <div class="tgraph">
-          <div class="tgraph-hdr">
-            <span class="tgraph-title">Direct Line · Zeel's AI Assistant</span>
-            <span class="tgraph-status">● Transmission Open</span>
-          </div>
-          <div class="tgraph-msgs" id="msgs">
-            <div class="tmsg tmsg-ai">
-              <div class="tmsg-label">dispatch from the machine</div>
-              <div class="tmsg-bubble">Good day. I am Zeel's AI assistant — fully briefed on his background, projects, and professional direction. Ask me anything: what he has built, where he is headed, or whether he would suit your team. I shall answer candidly.</div>
-            </div>
-          </div>
-          <div class="typing" id="typing">Composing reply</div>
-          <div class="quick-row">
-            <button class="qbtn" onclick="quickSend('What makes Zeel AI-forward?')">AI Focus</button>
-            <button class="qbtn" onclick="quickSend('What projects has Zeel built?')">Projects</button>
-            <button class="qbtn" onclick="quickSend('What are his strongest skills?')">Skills</button>
-            <button class="qbtn" onclick="quickSend('Is Zeel available for internships?')">Hire?</button>
-          </div>
-          <div class="tgraph-foot">
-            <input class="tgraph-input" id="inp" type="text" placeholder="Transmit your enquiry..." maxlength="300"/>
-            <button class="tgraph-send" id="sendbtn" onclick="sendMsg()">Send ↵</button>
-          </div>
-        </div>
-        <p class="ai-note">Powered by Claude · This AI feature is itself one of Zeel's projects.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ CONTACT ══════════ -->
-<section class="slide" id="slide-contact">
-  <div class="container">
-    <div class="contact-mast">
-      <h1 class="contact-big">Start a<br><em>Conversation.</em></h1>
-      <p class="contact-sub">Open to internships, part-time roles, and any team working seriously on AI systems. If you are building something intelligent, I want to help build it.</p>
-    </div>
-    <div class="contact-links">
-      <a href="mailto:zeel.patel@email.com" class="clink">✉ Email</a>
-      <a href="https://github.com/zeelpatel" class="clink" target="_blank">⌥ GitHub</a>
-      <a href="https://linkedin.com/in/zeelpatel" class="clink" target="_blank">⌘ LinkedIn</a>
-      <a href="#" class="clink">↓ Resume</a>
-    </div>
+<section id="slide-contact">
+  <h1>Start a Conversation.</h1>
+  <div class="contact-links">
+    <a href="mailto:zeel.patel@email.com" class="clink">Email</a>
+    <a href="https://github.com/zeelpatel" class="clink">GitHub</a>
   </div>
 </section>
 
 </main>
 
-<footer>
-  <span>© 2025 Zeel Patel</span>
-  <span>IT Student · AI-Forward Engineer · The Forward Engineer Gazette</span>
-  <span>Built with ScrollyTelling + Spec-Driven Development</span>
-</footer>
-
 <script>
-// Date
-document.getElementById('nav-date').textContent =
-  new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'}).toUpperCase();
-
-// Progress bar
-window.addEventListener('scroll',()=>{
-  const pct=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100;
-  document.getElementById('progress').style.width=pct+'%';
-});
-
-// Scroll reveal
+document.getElementById('nav-date').textContent = new Date().toDateString().toUpperCase();
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
 },{threshold:0.1});
 document.querySelectorAll('.slide').forEach(s=>obs.observe(s));
-document.getElementById('slide-hero').classList.add('visible');
-
-// ── AI TELEGRAPH ──
-const SYSTEM=`You are Zeel Patel's AI assistant embedded in his vintage-newspaper-themed portfolio site called "The Forward Engineer Gazette."
-
-WHO IS ZEEL:
-- Name: Zeel Patel, Information Technology student
-- Goal: AI-Forward Engineer — deeply understands both IT infrastructure and intelligent systems
-- Personality: Thoughtful, methodical, serious about learning, honest about being a student, clear-eyed about direction
-- Seeking: Summer 2025 internships in IT, software engineering, or anything touching AI/ML in production
-
-PHILOSOPHY: (1) Infrastructure First — AI runs on systems, understand the stack. (2) Build to Understand — every concept needs a project or it doesn't count. (3) Solve Real Problems — useful beats impressive.
-
-SKILLS: Python (strongest), HTML/CSS/JS, LLM API integration (Claude/OpenAI), SQL/JSON/REST APIs, Networking/Linux fundamentals, Git/GitHub, ML concepts via fast.ai + Coursera (actively studying).
-
-PROJECTS:
-1. This Portfolio — ScrollyTelling + live Claude AI assistant. Spec-driven development. The AI is itself a feature.
-2. IT Helpdesk Ticket Classifier — Python + LLM API, classifies support tickets by urgency/category, outputs JSON.
-3. Network Health Dashboard — Python/Flask, pings network nodes, logs latency, live browser status UI.
-4. RAG Study Assistant (in progress) — ingests lecture PDFs, creates embeddings, answers natural-language questions.
-
-EXPERIENCE: Full-time IT student. fast.ai Part 1 complete. Andrew Ng ML Specialization in progress. Building publicly on GitHub. No formal internship yet — every project treated as professional-quality portfolio work.
-
-TONE: Vintage, eloquent, warm. Honest that Zeel is a student — but frame his qualities accurately and positively. 2–4 sentences per response. Never invent details not listed above.`;
-
-const history=[];
-const msgBox=document.getElementById('msgs');
-const inp=document.getElementById('inp');
-const btn=document.getElementById('sendbtn');
-const typing=document.getElementById('typing');
-
-function addMsg(role,text){
-  const d=document.createElement('div');
-  d.className='tmsg tmsg-'+(role==='user'?'user':'ai');
-  d.innerHTML=`<div class="tmsg-label">${role==='user'?'your enquiry':'dispatch from the machine'}</div><div class="tmsg-bubble">${text}</div>`;
-  msgBox.appendChild(d);
-  msgBox.scrollTop=msgBox.scrollHeight;
-}
-function quickSend(t){inp.value=t;sendMsg();}
-inp.addEventListener('keydown',e=>{if(e.key==='Enter')sendMsg();});
-
-async function sendMsg(){
-  const t=inp.value.trim();
-  if(!t||btn.disabled)return;
-  inp.value='';btn.disabled=true;
-  addMsg('user',t);
-  history.push({role:'user',content:t});
-  typing.classList.add('on');
-  msgBox.scrollTop=msgBox.scrollHeight;
-  try{
-    const r=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:SYSTEM,messages:history})
-    });
-    const data=await r.json();
-    const reply=data.content?.find(b=>b.type==='text')?.text||'The line is unclear. Please try again.';
-    history.push({role:'assistant',content:reply});
-    typing.classList.remove('on');
-    addMsg('ai',reply);
-  }catch(e){
-    typing.classList.remove('on');
-    addMsg('ai','The transmission failed to connect. Please try again momentarily.');
-  }
-  btn.disabled=false;
-  inp.focus();
-}
 </script>
 </body>
 </html>
