@@ -8,10 +8,8 @@ This portfolio was designed as part of a final course project exploring aspirati
 
 ## Live Site
 
-https://zeel153.github.io/Zeel-Portfolio/
-
 ```bash
-https://yourusername.github.io/repository-name/
+https://zeel153.github.io/Zeel-Portfolio/
 ```
 
 ---
@@ -21,7 +19,7 @@ https://yourusername.github.io/repository-name/
 Add your repository link here:
 
 ```bash
-https://github.com/yourusername/repository-name
+https://github.com/Zeel153/Zeel-Portfolio.git
 ```
 
 ---
